@@ -1,0 +1,7 @@
+include ':baselib'
+include ':paging'
+include ':room'
+include ':livedata'
+include ':lifecycle'
+include ':app'
+rootProject.name = "AndroidJetpackDemo"
