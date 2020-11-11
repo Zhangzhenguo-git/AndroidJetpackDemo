@@ -8,7 +8,7 @@
 
         <variable
             name="LiveData"
-            type="com.pack.safflower.viewmodel.navigation.home.HomeViewModel" />
+            type="com.pack.safflower.viewmodel.home.HomeViewModel" />
     </data>
 
 

@@ -24,8 +24,8 @@ import com.pack.safflower.adapter.GridAdapter
 import com.pack.safflower.base.BaseViewModel
 import com.pack.safflower.databinding.TableitemLayoutBinding
 import com.pack.safflower.model.home.GridData
+import com.pack.safflower.model.home.HomeModelImpl
 import com.pack.safflower.model.home.TableData
-import com.pack.safflower.model.home.impl.HomeModelImpl
 
 public class HomeViewModel : BaseViewModel() {
 

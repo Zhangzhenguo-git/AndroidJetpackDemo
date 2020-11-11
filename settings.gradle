@@ -1,6 +1,5 @@
 include ':safflower'
 include ':workmanager'
-include ':baselib'
 include ':paging'
 include ':room'
 include ':livedata'

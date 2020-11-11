@@ -16,10 +16,10 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.pack.banner.IndicatorView
 import com.pack.banner.ScaleInTransformer
-import com.pack.baselib.UIUtil
 import com.pack.safflower.R
 import com.pack.safflower.base.BaseFragment_J
 import com.pack.safflower.databinding.HomeFragmentBinding
+import com.pack.safflower.util.UIUtil
 import com.pack.safflower.util.Utils
 import com.pack.safflower.view.home.tab.RecommendFragment
 import com.pack.safflower.viewmodel.home.HomeViewModel
