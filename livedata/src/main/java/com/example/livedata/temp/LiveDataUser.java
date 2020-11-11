@@ -7,8 +7,8 @@ public class LiveDataUser {
     //    普通属性
     private String city;
     //    动态更新属性
-    private MutableLiveData<String> name = new MediatorLiveData<>();
-    private MutableLiveData<Integer> age = new MutableLiveData<>();
+    private MutableLiveData<String> name = new MediatorLiveData<>();//live响应的属性
+    private MutableLiveData<Integer> age = new MutableLiveData<>();//live属性
 
     public LiveDataUser(String city, String name, Integer age) {
         this.city = city;

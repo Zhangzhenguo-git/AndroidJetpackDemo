@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+apply from:'../dependencies.gradle'
+android {
+
+    defaultConfig {
+        applicationId "com.pack.safflower"
+        minSdkVersion min_SdkVersion
+        targetSdkVersion target_SdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+}

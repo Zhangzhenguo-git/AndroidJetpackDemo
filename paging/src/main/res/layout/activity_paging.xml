@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+    </data>
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PagingActivity"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_paging"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarSize="20dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_rv_paging">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+</layout>

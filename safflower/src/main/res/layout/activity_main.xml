@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+    <com.pack.statelayout.StateLayoutView
+        android:id="@+id/stateLayoutView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btSuc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正常的"
+                />
+            <Button
+                android:id="@+id/btIng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中的"
+                />
+            <Button
+                android:id="@+id/btFail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载失败的"
+                />
+            <Button
+                android:id="@+id/btError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载错误的"
+                />
+            <Button
+                android:id="@+id/btEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载空的"
+                />
+
+        </LinearLayout>
+    </com.pack.statelayout.StateLayoutView>
+</layout>

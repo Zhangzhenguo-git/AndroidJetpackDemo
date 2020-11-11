@@ -1,0 +1,35 @@
+//if (singleModule.toBoolean()){
+//    apply plugin: 'com.android.application'
+//}else {
+    apply plugin: 'com.android.library'
+//}
+//
+apply from :"../dependencies.gradle"
+android {
+
+    defaultConfig {
+//        if (singleModule.toBoolean()){
+//            applicationId "com.example.banner"
+//        }
+        minSdkVersion min_SdkVersion
+        targetSdkVersion target_SdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api "androidx.viewpager2:viewpager2:1.0.0"
+    api 'com.github.lihangleo2:ShadowLayout:2.1.5'
+    api 'com.blankj:utilcode:1.25.9'
+}
