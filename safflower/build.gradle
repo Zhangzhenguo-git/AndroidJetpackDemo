@@ -22,5 +22,7 @@ android {
 }
 
 dependencies {
-
+//    状态布局
+    api project(path: ':statelayout')
+    api project(path:':banner')
 }
