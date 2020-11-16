@@ -6,7 +6,15 @@
 		android:icon="@android:mipmap/sym_def_app_icon"
 		android:label="@string/app_name"
 		android:supportsRtl="true"
-		android:theme="@android:style/Theme.Material.Light.NoActionBar">
-
+		android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+		<activity
+			android:name=".view.AacActivity"
+			android:launchMode="singleTop"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"></action>
+				<category android:name="android.intent.category.LAUNCHER"></category>
+			</intent-filter>
+		</activity>
 	</application>
 </manifest>

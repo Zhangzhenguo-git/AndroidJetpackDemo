@@ -2,19 +2,20 @@ package com.pack.safflower.model.read;
 
 import java.util.List;
 
-public class ReadLeftData {
+public class ReadRightChildData {
     private int id;
     private String name;
-    private List<ReadRightData> rightData;
+    private int imgId;
     private boolean isSelected;
 
-    public ReadLeftData() {
+    public ReadRightChildData() {
+
     }
 
-    public ReadLeftData(int id, String name, List<ReadRightData> rightData, boolean isSelected) {
+    public ReadRightChildData(int id, String name, int imgId, boolean isSelected) {
         this.id = id;
         this.name = name;
-        this.rightData = rightData;
+        this.imgId = imgId;
         this.isSelected = isSelected;
     }
 
@@ -42,20 +43,20 @@ public class ReadLeftData {
         isSelected = selected;
     }
 
-    public List<ReadRightData> getRightData() {
-        return rightData;
+    public int getImgId() {
+        return imgId;
     }
 
-    public void setRightData(List<ReadRightData> rightData) {
-        this.rightData = rightData;
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
     }
 
     @Override
     public String toString() {
-        return "ReadLeftData{" +
+        return "ReadRightChildData{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", rightData=" + rightData +
+                ", imgId=" + imgId +
                 ", isSelected=" + isSelected +
                 '}';
     }

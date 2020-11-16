@@ -13,7 +13,10 @@
             android:id="@+id/ivReadRightItemChildImg"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvReadRightItemChildTitle"
@@ -21,6 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="szdjfhbnvzfl"
-            app:layout_constraintTop_toBottomOf="@id/ivReadRightItemChildImg"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivReadRightItemChildImg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

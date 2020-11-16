@@ -25,7 +25,7 @@ public abstract class BaseFragment_J extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity=this.getActivity();
-        TAG=mActivity.getPackageName();
+        TAG=mActivity.getLocalClassName()+"：";
         initViewModel();
         initData();
         initOnClick();
