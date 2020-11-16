@@ -53,7 +53,7 @@
                     android:scrollbarAlwaysDrawHorizontalTrack="true"
                     android:scrollbarSize="20dp"
                     android:scrollbarStyle="outsideOverlay"
-                    android:scrollbars="none"
+                    android:scrollbars="vertical"
                     tools:listitem="@layout/read_rightitem">
                 </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>

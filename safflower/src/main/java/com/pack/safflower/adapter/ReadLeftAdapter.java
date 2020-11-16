@@ -44,8 +44,8 @@ public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLe
         if (mParents.get(position).isSelected()) {
             if (rightAdapter == null) {
                 rightAdapter = new ReadRightAdapter(mContext, mParents.get(position).getRightData());
-                mListener.setPatentClick(rightAdapter, mParents.get(position), position);
             }
+            mListener.setPatentClick(rightAdapter, mParents.get(position), position);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

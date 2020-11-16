@@ -22,13 +22,10 @@ public class ReadRightAdapter extends RecyclerView.Adapter<ReadRightAdapter.Read
     private Context mContext;
     private List<ReadRightData> mRights;
     private ReadRightChildAdapter mChildAdapter;
-    public ReadRightAdapter() {
-    }
 
     public ReadRightAdapter(Context context, List<ReadRightData> rights){
         this.mContext=context;
         this.mRights=rights;
-        mChildAdapter=new ReadRightChildAdapter();
     }
 
     @NonNull
@@ -40,14 +37,17 @@ public class ReadRightAdapter extends RecyclerView.Adapter<ReadRightAdapter.Read
 
     @Override
     public void onBindViewHolder(@NonNull ReadRightViewHolder holder, int position) {
-        holder.tvTitle.setText(mRights.get(position).getName());
-        if (mChildAdapter==null){
-            mChildAdapter=new ReadRightChildAdapter(mContext,mRights.get(position).getChildData());
-            holder.rlRightView.setLayoutManager(new GridLayoutManager(mContext,3));
-            holder.rlRightView.setAdapter(mChildAdapter);
-        }else {
-            mChildAdapter.notifyDataSetChanged();
+        if (mRights.get(position).isSelected()) {
+            holder.tvTitle.setText(mRights.get(position).getName());
+            if (mChildAdapter==null){
+                mChildAdapter=new ReadRightChildAdapter(mContext,mRights.get(position).getChildData());
+                holder.rlRightView.setLayoutManager(new GridLayoutManager(mContext,3));
+                holder.rlRightView.setAdapter(mChildAdapter);
+            }else {
+                mChildAdapter.notifyDataSetChanged();
+            }
         }
+
     }
 
     @Override

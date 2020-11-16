@@ -26,8 +26,6 @@ public class ReadRightChildAdapter extends RecyclerView.Adapter<ReadRightChildAd
     private Context mContext;
     private List<ReadRightChildData> mChilds;
     private setOnClickListener mListener;
-    public ReadRightChildAdapter() {
-    }
 
     public ReadRightChildAdapter(Context context, List<ReadRightChildData> childs){
         this.mContext=context;
@@ -44,8 +42,10 @@ public class ReadRightChildAdapter extends RecyclerView.Adapter<ReadRightChildAd
 
     @Override
     public void onBindViewHolder(@NonNull ReadRightChildViewHolder holder, int position) {
-        holder.ivImg.setImageResource(mChilds.get(position).getImgId());
-        holder.tvTitle.setText(mChilds.get(position).getName());
+        if (mChilds.get(position).isSelected()){
+            holder.tvTitle.setText(mChilds.get(position).getName());
+            holder.ivImg.setImageResource(mChilds.get(position).getImgId());
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

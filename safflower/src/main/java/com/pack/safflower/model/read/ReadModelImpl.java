@@ -56,22 +56,35 @@ public class ReadModelImpl implements ReadInterface {
         List<ReadLeftData> leftDatas = new ArrayList<>();
         List<ReadRightData> rightDatas = new ArrayList<>();
         List<ReadRightChildData> childDataList = new ArrayList<>();
-        for (int i = 0; i < 35; i++) {
+        for (int i = 0; i <6; i++) {
             ReadLeftData leftData = new ReadLeftData();
             leftData.setId(i);
             leftData.setName("left" + i);
-            leftData.setSelected(false);
-            for (int q = 0; q < 10; q++) {
+            if (i==0){
+                leftData.setSelected(true);
+            }else {
+                leftData.setSelected(false);
+            }
+
+            for (int q = 0; q < 3; q++) {
                 ReadRightData rightData = new ReadRightData();
                 rightData.setId(q);
                 rightData.setName("left" + i);
-                rightData.setSelected(false);
-                for (int a = 0; a < 6; a++) {
+                if (i==0){
+                    rightData.setSelected(true);
+                }else {
+                    rightData.setSelected(false);
+                }
+                for (int a = 0; a < 3; a++) {
                     ReadRightChildData childData = new ReadRightChildData();
                     childData.setId(q);
-                    childData.setName("left" + q);
+                    childData.setName("left" + i);
                     childData.setImgId(R.mipmap.ic_launcher);
-                    childData.setSelected(false);
+                    if (i==0){
+                        childData.setSelected(true);
+                    }else {
+                        childData.setSelected(false);
+                    }
                     childDataList.add(childData);
                 }
                 rightData.setChildData(childDataList);
