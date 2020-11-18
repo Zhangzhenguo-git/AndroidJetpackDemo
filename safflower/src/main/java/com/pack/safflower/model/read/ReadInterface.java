@@ -1,11 +1,13 @@
 package com.pack.safflower.model.read;
 
+import android.content.Context;
+
 import java.util.List;
 
 public interface ReadInterface {
-    ReadRightData getRead(int id, String name);
-    List<ReadLeftData> getReadLeft();
-    List<ReadRightData> getReadRight(String name);
-    List<ReadLeftData> getAllDatas();
+    List<Integer> getShowTitle();
+    List<String> getMenuList();
+    List<CategoryBean.DataBean> getHomeDatas();
+    void loadDatas(Context context);
 
 }

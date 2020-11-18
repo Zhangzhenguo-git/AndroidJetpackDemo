@@ -12,30 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.NaviActivity">
-
-        <fragment
-            android:id="@+id/naviFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/naviBottomNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorBottomNav"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/nav_menu" />
+            android:layout_height="match_parent">
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/naviBottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorBottomNav"
+                android:layout_alignParentBottom="true"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/nav_menu" />
+            <fragment
+                android:id="@+id/naviFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph"
+                android:layout_above="@id/naviBottomNavigation"/>
+        </RelativeLayout>
 
     </com.pack.statelayout.StateLayoutView>
 </layout>

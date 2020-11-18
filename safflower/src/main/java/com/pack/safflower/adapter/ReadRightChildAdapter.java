@@ -9,25 +9,23 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.pack.safflower.R;
-import com.pack.safflower.databinding.ReadRightitemBinding;
 import com.pack.safflower.databinding.ReadRightitemChildBinding;
-import com.pack.safflower.model.read.ReadLeftData;
-import com.pack.safflower.model.read.ReadRightChildData;
-import com.pack.safflower.model.read.ReadRightData;
+import com.pack.safflower.model.read.CategoryBean;
+import com.pack.safflower.util.GlideUtil;
 
 import java.util.List;
 
 public class ReadRightChildAdapter extends RecyclerView.Adapter<ReadRightChildAdapter.ReadRightChildViewHolder> {
 
     private Context mContext;
-    private List<ReadRightChildData> mChilds;
+    private List<CategoryBean.DataBean.DataListBean> mChilds;
     private setOnClickListener mListener;
 
-    public ReadRightChildAdapter(Context context, List<ReadRightChildData> childs){
+    public ReadRightChildAdapter(Context context, List<CategoryBean.DataBean.DataListBean> childs){
         this.mContext=context;
         this.mChilds=childs;
     }
@@ -42,15 +40,15 @@ public class ReadRightChildAdapter extends RecyclerView.Adapter<ReadRightChildAd
 
     @Override
     public void onBindViewHolder(@NonNull ReadRightChildViewHolder holder, int position) {
-        if (mChilds.get(position).isSelected()){
-            holder.tvTitle.setText(mChilds.get(position).getName());
-            holder.ivImg.setImageResource(mChilds.get(position).getImgId());
-        }
+//        GlideUtil.getInstance().setGlideRounde(mContext,mChilds.get(position).getImgURL(),holder.ivImg);
+        GlideUtil.getInstance().setGlide(mContext,R.mipmap.ic_launcher,holder.ivImg);
+        holder.tvTitle.setText(mChilds.get(position).getTitle());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mListener!=null){
-                    mListener.setPatentClick(mChilds.get(position),position);
+                    mListener.setPatentClick(position);
                 }
             }
         });
@@ -73,7 +71,7 @@ public class ReadRightChildAdapter extends RecyclerView.Adapter<ReadRightChildAd
     }
 
     public interface setOnClickListener{
-        void setPatentClick(ReadRightChildData parent,int position);
+        void setPatentClick(int position);
     }
 
     public void setOnParentClickListener(setOnClickListener listener){

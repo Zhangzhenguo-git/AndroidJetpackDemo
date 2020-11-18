@@ -1,6 +1,7 @@
 package com.pack.safflower.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +13,30 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pack.safflower.R;
 import com.pack.safflower.databinding.ReadLeftitemBinding;
-import com.pack.safflower.model.read.ReadLeftData;
-import com.pack.safflower.model.read.ReadRightData;
+import com.pack.safflower.model.read.CategoryBean;
 
 import java.util.List;
 
 public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLeftViewHolder> {
 
     private Context mContext;
-    private List<ReadLeftData> mParents;
+    private List<String> mParents;
     private setOnClickListener mListener;
-    private ReadRightAdapter rightAdapter;
+    private int selectItem = 0;
 
 
-    public ReadLeftAdapter(Context context, List<ReadLeftData> patents) {
+    public ReadLeftAdapter(Context context, List<String> patents) {
         this.mContext = context;
         this.mParents = patents;
+    }
+
+
+    public int getSelectItem() {
+        return selectItem;
+    }
+
+    public void setSelectItem(int selectItem) {
+        this.selectItem = selectItem;
     }
 
     @NonNull
@@ -40,22 +49,21 @@ public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLe
 
     @Override
     public void onBindViewHolder(@NonNull ReadLeftViewHolder holder, int position) {
-        holder.tvTitle.setText(mParents.get(position).getName());
-        if (mParents.get(position).isSelected()) {
-            if (rightAdapter == null) {
-                rightAdapter = new ReadRightAdapter(mContext, mParents.get(position).getRightData());
-            }
-            mListener.setPatentClick(rightAdapter, mParents.get(position), position);
-        }
 
+        if (position == selectItem) {
+            holder.tvTitle.setBackgroundColor(Color.WHITE);
+            holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.green));
+        } else {
+            holder.tvTitle.setBackgroundColor(mContext.getResources().getColor(R.color.background));
+            holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.colorBlack));
+        }
+        holder.tvTitle.setText(mParents.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mListener != null) {
-                    mParents.get(position).setSelected(true);
 //                    rightAdapter = new ReadRightAdapter(mContext, mParents.get(position).getRightData());
-//                    mListener.setPatentClick(rightAdapter, mParents.get(position), position);
-                    mListener.setNotifications(rightAdapter, position);
+                    mListener.setPatentClick(position);
                 }
             }
         });
@@ -76,9 +84,8 @@ public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLe
     }
 
     public interface setOnClickListener {
-        void setPatentClick(ReadRightAdapter rightAdapter, ReadLeftData parent, int position);
+        void setPatentClick(int position);
 
-        void setNotifications(ReadRightAdapter rightAdapter, int position);
     }
 
     public void setOnParentClickListener(setOnClickListener listener) {

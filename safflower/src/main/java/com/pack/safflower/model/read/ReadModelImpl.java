@@ -1,13 +1,26 @@
 package com.pack.safflower.model.read;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.loader.AssetsProvider;
+
+import com.blankj.utilcode.util.GsonUtils;
 import com.pack.safflower.R;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadModelImpl implements ReadInterface {
 
     private static ReadModelImpl instance;
+    private List<String> menuList = new ArrayList<>();
+    private List<CategoryBean.DataBean> homeList = new ArrayList<>();
+    private List<Integer> showTitle;
 
     public static synchronized ReadModelImpl getInstance() {
         if (instance == null) {
@@ -16,101 +29,43 @@ public class ReadModelImpl implements ReadInterface {
         return instance;
     }
 
-    ;
-
     @Override
-    public ReadRightData getRead(int id, String name) {
-        return null;
-    }
-
-
-    @Override
-    public List<ReadLeftData> getReadLeft() {
-        List<ReadLeftData> leftDatas = new ArrayList<>();
-        for (int i = 0; i < 35; i++) {
-            ReadLeftData leftData = new ReadLeftData();
-            leftData.setId(i);
-            leftData.setName("left" + i);
-            leftData.setSelected(false);
-            leftDatas.add(leftData);
-        }
-        return leftDatas;
-    }
-
-
-    @Override
-    public List<ReadRightData> getReadRight(String name) {
-        List<ReadRightData> rightDatas = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            ReadRightData rightData = new ReadRightData();
-            rightData.setId(i);
-            rightData.setName("left" + i);
-            rightData.setSelected(false);
-            setRightChild(rightDatas, rightData);
-        }
-        return rightDatas;
+    public List<Integer> getShowTitle() {
+        return showTitle;
     }
 
     @Override
-    public List<ReadLeftData> getAllDatas() {
-        List<ReadLeftData> leftDatas = new ArrayList<>();
-        List<ReadRightData> rightDatas = new ArrayList<>();
-        List<ReadRightChildData> childDataList = new ArrayList<>();
-        for (int i = 0; i <6; i++) {
-            ReadLeftData leftData = new ReadLeftData();
-            leftData.setId(i);
-            leftData.setName("left" + i);
-            if (i==0){
-                leftData.setSelected(true);
-            }else {
-                leftData.setSelected(false);
+    public List<String> getMenuList() {
+        return menuList;
+    }
+
+    @Override
+    public List<CategoryBean.DataBean> getHomeDatas() {
+        return homeList;
+    }
+
+    @Override
+    public void loadDatas(Context context) {
+        StringBuffer buffer = new StringBuffer();
+//        获取assets资源
+        AssetManager ap = context.getAssets();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(ap.open("category.json")));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                buffer.append(line);
             }
-
-            for (int q = 0; q < 3; q++) {
-                ReadRightData rightData = new ReadRightData();
-                rightData.setId(q);
-                rightData.setName("left" + i);
-                if (i==0){
-                    rightData.setSelected(true);
-                }else {
-                    rightData.setSelected(false);
-                }
-                for (int a = 0; a < 3; a++) {
-                    ReadRightChildData childData = new ReadRightChildData();
-                    childData.setId(q);
-                    childData.setName("left" + i);
-                    childData.setImgId(R.mipmap.ic_launcher);
-                    if (i==0){
-                        childData.setSelected(true);
-                    }else {
-                        childData.setSelected(false);
-                    }
-                    childDataList.add(childData);
-                }
-                rightData.setChildData(childDataList);
-                rightDatas.add(rightData);
-            }
-            leftData.setRightData(rightDatas);
-            leftDatas.add(leftData);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return leftDatas;
-    }
+        CategoryBean bean = GsonUtils.fromJson(buffer.toString(), CategoryBean.class);
 
-    /**
-     * 设置RightChild数据
-     */
-    private void setRightChild(List<ReadRightData> rightDatas, ReadRightData rightData) {
-        List<ReadRightChildData> childDataList = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            ReadRightChildData childData = new ReadRightChildData();
-            childData.setId(i);
-            childData.setName("left" + i);
-            childData.setImgId(R.mipmap.ic_launcher);
-            childData.setSelected(false);
-            childDataList.add(childData);
-
-            rightData.setChildData(childDataList);
-            rightDatas.add(rightData);
+        showTitle = new ArrayList<>();
+        for (int i = 0; i < bean.getData().size(); i++) {
+            CategoryBean.DataBean parent = bean.getData().get(i);
+            menuList.add(parent.getModuleTitle());
+            showTitle.add(i);
+            homeList.add(parent);
         }
     }
 
