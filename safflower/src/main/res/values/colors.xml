@@ -10,4 +10,11 @@
     <color name="colorBottomNav">#ffffff</color>
     <color name="colorRed">#FF1100</color>
     <color name="transparent">#00000000</color>
+
+    <color name="background">#f1f1f1</color>
+    <color name="sred">#ff4141</color>
+    <color name="gold">#d8ab5c</color>
+    <color name="orange">#ffa500</color>
+    <color name="pink">#ffc0cb</color>
+    <color name="green">#FF34A350</color>
 </resources>

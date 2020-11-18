@@ -11,54 +11,50 @@
         android:layout_height="match_parent"
         tools:context=".viewmodel.read.ReadFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/etreadSearch"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rlReadLeftListView"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/search_bk_style"
-                android:drawableLeft="@drawable/search_20"
-                android:hint="搜索"
-                android:visibility="gone"
-                android:paddingLeft="10dp"></EditText>
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                android:scrollbarSize="20dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="none"
+                tools:listitem="@layout/read_leftitem"></androidx.recyclerview.widget.RecyclerView>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/colorWhite"
-                app:layout_constraintTop_toBottomOf="@id/etreadSearch">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rlReadLeftListView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7"
-                    android:scrollbarAlwaysDrawHorizontalTrack="true"
-                    android:scrollbarSize="20dp"
-                    android:scrollbarStyle="outsideOverlay"
-                    android:scrollbars="none"
-                    tools:listitem="@layout/read_leftitem">
-                </androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="match_parent"
+                android:layout_weight="3">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rlReadRightListView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
                     android:scrollbarAlwaysDrawHorizontalTrack="true"
                     android:scrollbarSize="20dp"
                     android:scrollbarStyle="outsideOverlay"
                     android:scrollbars="none"
-                    tools:listitem="@layout/read_rightitem">
-                </androidx.recyclerview.widget.RecyclerView>
-            </LinearLayout>
+                    tools:listitem="@layout/read_rightitem"></androidx.recyclerview.widget.RecyclerView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tv_titile"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="#DCDBDB"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="hello word" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
 
     </com.pack.statelayout.StateLayoutView>
 
