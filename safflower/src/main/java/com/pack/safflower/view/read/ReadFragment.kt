@@ -39,6 +39,7 @@ class ReadFragment : BaseFragment_J() {
         binding.rlReadLeftListView.setAdapter(leftAdapter)
 
         rightAdapter = ReadRightAdapter(mActivity, mViewModel.homeDatas)
+        rightAdapter?.selected = 0
         binding.rlReadRightListView.layoutManager = LinearLayoutManager(mActivity)
         binding.rlReadRightListView.adapter = rightAdapter
 
@@ -50,8 +51,8 @@ class ReadFragment : BaseFragment_J() {
                 System.out.println(TAG + "setPatentClick");
                 leftAdapter?.selectItem = position
                 leftAdapter?.notifyDataSetChanged()
-                binding.tvTitile.setText(mViewModel.menuList.get(position))
-                rightAdapter?.notifyItemChanged(mViewModel.showTitle.get(position))
+                rightAdapter?.selected = position
+                rightAdapter?.notifyDataSetChanged()
             }
         })
 //        home列表Item点击监听
@@ -71,7 +72,6 @@ class ReadFragment : BaseFragment_J() {
                 val manager = recyclerView.layoutManager as LinearLayoutManager?
                 // 当不滚动时
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    System.out.println("执行停止滑动")
                     //获取最后一个完全显示的ItemPosition
                     val lastVisibleItem = manager!!.findLastCompletelyVisibleItemPosition()
                     val totalItemCount = manager!!.itemCount
@@ -83,15 +83,16 @@ class ReadFragment : BaseFragment_J() {
                         //加载更多功能的代码
                         System.out.println("执行滑动到底部")
                         selectedIndex++
-                    }else {
+                    } else {
                         System.out.println("执行滑动到顶部")
-                        if (selectedIndex>0){
+                        if (selectedIndex > 0) {
                             selectedIndex--
                         }
-                        binding.tvTitile.setText(mViewModel.menuList[selectedIndex])
-                        leftAdapter?.selectItem = firstIndex
-                        leftAdapter?.notifyDataSetChanged()
                     }
+                    System.out.println("执行:" + firstIndex + "-----" + selectedIndex)
+//                    leftAdapter?.selectItem = firstIndex
+//                    leftAdapter?.notifyDataSetChanged()
+//                    rightAdapter?.selected = 0
                 }
             }
 

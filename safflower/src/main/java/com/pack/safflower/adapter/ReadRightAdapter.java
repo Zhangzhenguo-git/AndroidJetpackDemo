@@ -21,13 +21,19 @@ public class ReadRightAdapter extends RecyclerView.Adapter<ReadRightAdapter.Read
     private Context mContext;
     private List<CategoryBean.DataBean> homeList;
     private setOnItemClickListener mListener;
-
+    private int selected=0;
 
     public ReadRightAdapter(Context context, List<CategoryBean.DataBean> homeList) {
         this.mContext = context;
         this.homeList = homeList;
     }
 
+    public void setSelected(int selected){
+        this.selected=selected;
+    }
+    public int getSelected(){
+        return selected;
+    }
     @NonNull
     @Override
     public ReadRightViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,11 +44,11 @@ public class ReadRightAdapter extends RecyclerView.Adapter<ReadRightAdapter.Read
 
     @Override
     public void onBindViewHolder(@NonNull ReadRightViewHolder holder, int position) {
-        CategoryBean.DataBean bean = homeList.get(position);
-        List<CategoryBean.DataBean.DataListBean> childList = bean.getDataList();
+        CategoryBean.DataBean.DataListBean bean = homeList.get(selected).getDataList().get(position);
+        List<CategoryBean.DataBean.DataListBean.ChildListBean> childList = bean.getChildList();
 
         ReadRightChildAdapter adapter=new ReadRightChildAdapter(mContext,childList);
-        holder.tvTitle.setText(homeList.get(position).getModuleTitle());
+        holder.tvTitle.setText(bean.getTitle());
         holder.rlRightView.setLayoutManager(new GridLayoutManager(mContext,3));
         holder.rlRightView.setAdapter(adapter);
 
@@ -58,7 +64,7 @@ public class ReadRightAdapter extends RecyclerView.Adapter<ReadRightAdapter.Read
 
     @Override
     public int getItemCount() {
-        return homeList == null ? 0 : homeList.size();
+        return homeList.get(selected).getDataList()== null ? 0 : homeList.get(selected).getDataList().size();
     }
 
     class ReadRightViewHolder extends RecyclerView.ViewHolder {

@@ -50,6 +50,7 @@
                     android:background="#DCDBDB"
                     android:gravity="center_vertical"
                     android:paddingLeft="20dp"
+                    android:visibility="gone"
                     android:text="hello word" />
             </RelativeLayout>
 

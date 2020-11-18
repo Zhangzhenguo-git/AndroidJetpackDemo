@@ -22,10 +22,10 @@ import java.util.List;
 public class ReadRightChildAdapter extends RecyclerView.Adapter<ReadRightChildAdapter.ReadRightChildViewHolder> {
 
     private Context mContext;
-    private List<CategoryBean.DataBean.DataListBean> mChilds;
+    private List<CategoryBean.DataBean.DataListBean.ChildListBean> mChilds;
     private setOnClickListener mListener;
 
-    public ReadRightChildAdapter(Context context, List<CategoryBean.DataBean.DataListBean> childs){
+    public ReadRightChildAdapter(Context context, List<CategoryBean.DataBean.DataListBean.ChildListBean> childs){
         this.mContext=context;
         this.mChilds=childs;
     }

@@ -35,7 +35,7 @@ public class ReadViewModel extends AndroidViewModel { // TODO: Implement the Vie
         impl.loadDatas(context);
     }
     /**
-     * 实例化all数据
+     * 实例化home数据
      */
     public List<CategoryBean.DataBean> getHomeDatas(){
         if (impl.getHomeDatas()!=null){
