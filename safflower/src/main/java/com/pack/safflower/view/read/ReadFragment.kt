@@ -75,6 +75,9 @@ class ReadFragment : BaseFragment_J() {
                     //获取最后一个完全显示的ItemPosition
                     val lastVisibleItem = manager!!.findLastCompletelyVisibleItemPosition()
                     val totalItemCount = manager!!.itemCount
+
+                    // 获取当前滚动到的条目位置
+                    val firstIndex: Int = manager.findFirstVisibleItemPosition()
                     // 判断是否滚动到底部，并且是向右滚动
                     if (lastVisibleItem == totalItemCount - 1 && isSlidingToLast) {
                         //加载更多功能的代码
@@ -86,7 +89,7 @@ class ReadFragment : BaseFragment_J() {
                             selectedIndex--
                         }
                         binding.tvTitile.setText(mViewModel.menuList[selectedIndex])
-                        leftAdapter?.selectItem = selectedIndex
+                        leftAdapter?.selectItem = firstIndex
                         leftAdapter?.notifyDataSetChanged()
                     }
                 }
