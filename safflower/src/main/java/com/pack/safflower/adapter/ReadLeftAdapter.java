@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,10 +52,10 @@ public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLe
     public void onBindViewHolder(@NonNull ReadLeftViewHolder holder, int position) {
 
         if (position == selectItem) {
-            holder.tvTitle.setBackgroundColor(Color.WHITE);
+            holder.clReadLeftItem.setBackgroundResource(R.drawable.left_item_bk_select);
             holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.green));
         } else {
-            holder.tvTitle.setBackgroundColor(mContext.getResources().getColor(R.color.background));
+            holder.clReadLeftItem.setBackgroundResource(R.drawable.left_item_bk_noselect);
             holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.colorBlack));
         }
         holder.tvTitle.setText(mParents.get(position));
@@ -75,11 +76,13 @@ public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLe
     }
 
     class ReadLeftViewHolder extends RecyclerView.ViewHolder {
+        ConstraintLayout clReadLeftItem;
         TextView tvTitle;
 
         public ReadLeftViewHolder(@NonNull ReadLeftitemBinding binding) {
             super(binding.getRoot());
             this.tvTitle = binding.tvReadLeftItemName;
+            this.clReadLeftItem = binding.clReadLeftItem;
         }
     }
 

@@ -26,6 +26,7 @@
                 android:scrollbarSize="20dp"
                 android:scrollbarStyle="outsideOverlay"
                 android:scrollbars="none"
+                android:background="@color/colorWhite"
                 tools:listitem="@layout/read_leftitem"></androidx.recyclerview.widget.RecyclerView>
 
             <RelativeLayout
