@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+
+    <item>
+        <color android:color="@color/colorAccent" />
+    </item>
+    <item>
+        <bitmap
+            android:gravity="bottom|fill_vertical|fill_horizontal"
+            android:src="@drawable/loadbg"></bitmap>
+    </item>
+
+    <item android:top="150dp">
+        <bitmap
+            android:gravity="top"
+            android:src="@drawable/logo" />
+    </item>
+</layer-list>
