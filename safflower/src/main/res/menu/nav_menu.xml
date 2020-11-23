@@ -12,7 +12,10 @@
         android:icon="@drawable/navbuttom_readicon"
         android:title="@string/read"
         />
-
+    <!--因为需要覆盖view 此处省略android:icon-->
+    <item
+        android:id="@+id/liveFragment"
+        android:title="" />
     <item
         android:id="@+id/whateverFragment"
         android:icon="@drawable/navbuttom_whatevericon"

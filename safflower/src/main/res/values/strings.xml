@@ -2,8 +2,8 @@
     <string name="app_name">Safflower</string>
 
 
-    <string name="home">你是</string>
-    <string name="read">我的</string>
-    <string name="whatever">小苹</string>
-    <string name="user">果哟</string>
+    <string name="home">小牛</string>
+    <string name="read">是我</string>
+    <string name="whatever">的小</string>
+    <string name="user">朋友</string>
 </resources>

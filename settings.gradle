@@ -13,4 +13,5 @@ include ':dagger2'
 include ':navigation'
 include ':banner'
 include ':statelayout'
+include ':broccoli'
 rootProject.name = "AndroidJetpackDemo"
