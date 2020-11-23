@@ -8,7 +8,7 @@ import com.pack.safflower.databinding.ActivityStartPageBinding
 import com.pack.safflower.view.NaviActivity
 
 class StartPageActivity : BaseActivity_K() {
-    lateinit var binding:ActivityStartPageBinding
+    lateinit var binding: ActivityStartPageBinding
     lateinit var startPageHandler:Handler
     lateinit var runnable: Runnable
     override fun setContentView(){
@@ -32,6 +32,6 @@ class StartPageActivity : BaseActivity_K() {
 
     override fun initClick() {
 //        startPageHandler.postDelayed(runnable,3000)
-        startPageHandler.sendEmptyMessageDelayed(0,500)
+        startPageHandler.sendEmptyMessageDelayed(0,100)
     }
 }
