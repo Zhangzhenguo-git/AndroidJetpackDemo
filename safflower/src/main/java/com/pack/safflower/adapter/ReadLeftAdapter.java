@@ -1,7 +1,6 @@
 package com.pack.safflower.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pack.safflower.R;
 import com.pack.safflower.databinding.ReadLeftitemBinding;
-import com.pack.safflower.model.read.CategoryBean;
 
 import java.util.List;
 
@@ -52,12 +50,17 @@ public class ReadLeftAdapter extends RecyclerView.Adapter<ReadLeftAdapter.ReadLe
     public void onBindViewHolder(@NonNull ReadLeftViewHolder holder, int position) {
 
         if (position == selectItem) {
-            holder.clReadLeftItem.setBackgroundResource(R.drawable.left_item_bk_select);
+            if (position==0){
+                holder.clReadLeftItem.setBackgroundResource(R.drawable.left_view_bk_topone);
+            }else{
+                holder.clReadLeftItem.setBackgroundResource(R.drawable.left_view_bk_all);
+            }
             holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.green));
         } else {
-            holder.clReadLeftItem.setBackgroundResource(R.drawable.left_item_bk_noselect);
+            holder.clReadLeftItem.setBackgroundResource(R.drawable.left_view_bk_noselect);
             holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.colorBlack));
         }
+
         holder.tvTitle.setText(mParents.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

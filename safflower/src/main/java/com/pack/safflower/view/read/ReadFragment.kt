@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pack.safflower.R
@@ -36,6 +37,7 @@ class ReadFragment : BaseFragment_J() {
         leftAdapter = ReadLeftAdapter(mActivity, mViewModel.menuList)
         leftAdapter?.selectItem = 0
         binding.rlReadLeftListView.layoutManager = LinearLayoutManager(mActivity)
+//        binding.rlReadLeftListView.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.))
         binding.rlReadLeftListView.setAdapter(leftAdapter)
 
         rightAdapter = ReadRightAdapter(mActivity, mViewModel.homeDatas)
@@ -51,6 +53,11 @@ class ReadFragment : BaseFragment_J() {
                 System.out.println(TAG + "setPatentClick");
                 leftAdapter?.selectItem = position
                 leftAdapter?.notifyDataSetChanged()
+                if (position==0){
+                    binding.rlReadRightListView.setBackgroundResource(R.drawable.right_view_bk_topone)
+                }else{
+                    binding.rlReadRightListView.setBackgroundResource(R.drawable.right_view_bk_all)
+                }
                 rightAdapter?.selected = position
                 rightAdapter?.notifyDataSetChanged()
             }
