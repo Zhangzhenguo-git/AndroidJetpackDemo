@@ -14,6 +14,6 @@
     <item android:top="150dp">
         <bitmap
             android:gravity="top"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"></bitmap>
     </item>
 </layer-list>

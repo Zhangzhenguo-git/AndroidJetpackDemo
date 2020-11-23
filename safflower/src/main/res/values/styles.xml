@@ -5,11 +5,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--        解决启动页白屏最后解决-->
-<!--        <item name="android:windowBackground">@drawable/splash_file</item>-->
     </style>
 
-    <style name="LoadTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.NoActionBar">
         <!--        解决启动页白屏最后解决-->
         <item name="android:windowBackground">@drawable/splash_file</item>
     </style>

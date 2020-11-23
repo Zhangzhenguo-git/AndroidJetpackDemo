@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".StartPageActivity"
-            android:theme="@style/LoadTheme">
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

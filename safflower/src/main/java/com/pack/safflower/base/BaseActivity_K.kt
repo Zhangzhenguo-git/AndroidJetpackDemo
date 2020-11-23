@@ -25,7 +25,6 @@ abstract class BaseActivity_K: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mActivity=this
-        supportActionBar!!.hide()
         setContentView()
         initData()
         initClick()
@@ -62,10 +61,10 @@ abstract class BaseActivity_K: AppCompatActivity() {
         }
 
     }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        //修改背景为白色
-        window.setBackgroundDrawable(ColorDrawable(Color.WHITE))
-    }
+//
+//    override fun onWindowFocusChanged(hasFocus: Boolean) {
+//        super.onWindowFocusChanged(hasFocus)
+//        //修改背景为白色
+//        window.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+//    }
 }
