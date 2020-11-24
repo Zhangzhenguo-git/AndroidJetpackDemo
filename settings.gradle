@@ -1,3 +1,8 @@
+include ':modularFIve'
+include ':modularFour'
+include ':modularThree'
+include ':modularTwo'
+include ':modularOne'
 include ':safflower'
 include ':paging'
 include ':room'

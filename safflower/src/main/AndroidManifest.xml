@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pack.safflower">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".StartPageActivity"
+        <activity android:name=".view.home.exam.ExamActivity"></activity>
+        <activity
+            android:name=".StartPageActivity"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.NaviActivity">
-
-        </activity>
+        <activity android:name=".view.NaviActivity"></activity>
         <activity android:name=".MainActivity" />
 
         <meta-data
@@ -32,7 +31,6 @@
         <meta-data
             android:name="design_height_in_dp"
             android:value="960" />
-
     </application>
 
 </manifest>

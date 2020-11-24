@@ -12,6 +12,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.AppBarLayout
 
 /**
  * @author Zhangzhenguo
@@ -24,6 +25,7 @@ abstract class BaseActivity_K: AppCompatActivity() {
     var mActivity: Activity? =null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.hide()
         mActivity=this
         setContentView()
         initData()

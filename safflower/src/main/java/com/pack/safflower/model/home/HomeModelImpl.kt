@@ -31,15 +31,15 @@ import com.pack.safflower.model.home.TableData
 
 
     var gridS= listOf(
-            GridData(R.mipmap.ic_launcher,"菜单1"),
-            GridData(R.mipmap.ic_launcher,"菜单2"),
-            GridData(R.mipmap.ic_launcher,"菜单3"),
-            GridData(R.mipmap.ic_launcher,"菜单4"),
-            GridData(R.mipmap.ic_launcher,"菜单5"),
-            GridData(R.mipmap.ic_launcher,"菜单6"),
-            GridData(R.mipmap.ic_launcher,"菜单7"),
-            GridData(R.mipmap.ic_launcher,"菜单8"),
-            GridData(R.mipmap.ic_launcher,"菜单9"),
+            GridData(R.mipmap.ic_launcher,"考试宝"),
+            GridData(R.mipmap.ic_launcher,"音乐播放"),
+            GridData(R.mipmap.ic_launcher,"视频播放"),
+            GridData(R.mipmap.ic_launcher,"QQ导航栏"),
+            GridData(R.mipmap.ic_launcher,"Tab切换"),
+            GridData(R.mipmap.ic_launcher,"星座运势"),
+            GridData(R.mipmap.ic_launcher,"天气预报"),
+            GridData(R.mipmap.ic_launcher,"融云即时"),
+            GridData(R.mipmap.ic_launcher,"A I客服"),
             GridData(R.mipmap.ic_launcher,"敬请期待")
     )
     /**

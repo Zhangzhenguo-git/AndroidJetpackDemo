@@ -61,7 +61,6 @@ public class GridAdapter extends BaseAdapter {
             view = LayoutInflater.from(context).inflate(R.layout.grid_item, viewGroup, false);
             holder.ivGrid = view.findViewById(R.id.ivGridImg);
             holder.nameGrid = view.findViewById(R.id.tvGridName);
-
             view.setTag(holder);
         } else {
             holder = (GridHolder) view.getTag();
@@ -71,6 +70,14 @@ public class GridAdapter extends BaseAdapter {
                 .apply(new RequestOptions().transform(new RoundedCorners(50)))
                 .into(holder.ivGrid);
         holder.nameGrid.setText(items.get(i).getIconName());
+        holder.ivGrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onGridItemListener != null) {
+                    onGridItemListener.onItemClick(i);
+                }
+            }
+        });
         return view;
     }
 
@@ -82,10 +89,11 @@ public class GridAdapter extends BaseAdapter {
     /**
      * Item点击事件
      */
-    public interface OnGridItemLinstener{
+    public interface OnGridItemLinstener {
         void onItemClick(int position);
     }
-    public void setOnGridItemListener(OnGridItemLinstener onGridItemListener){
-        this.onGridItemListener=onGridItemListener;
+
+    public void setOnGridItemListener(OnGridItemLinstener onGridItemListener) {
+        this.onGridItemListener = onGridItemListener;
     }
 }
