@@ -3,7 +3,7 @@ package com.pack.safflower
 import android.os.Handler
 import android.os.Message
 import androidx.databinding.DataBindingUtil
-import com.pack.safflower.base.BaseActivity_K
+import com.example.baselib.base.BaseActivity_K
 import com.pack.safflower.databinding.ActivityStartPageBinding
 import com.pack.safflower.view.NaviActivity
 import me.jessyan.autosize.internal.CancelAdapt

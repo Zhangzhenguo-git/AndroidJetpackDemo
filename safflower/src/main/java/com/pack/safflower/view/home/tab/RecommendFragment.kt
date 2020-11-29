@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.pack.safflower.R
-import com.pack.safflower.base.BaseFragment_K
+import com.example.baselib.base.BaseFragment_K
 import com.pack.safflower.databinding.RecommendFragmentBinding
 import com.pack.safflower.viewmodel.home.tab.RecommendViewModel
 

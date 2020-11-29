@@ -1,16 +1,17 @@
-//if (singleModule.toBoolean()){
-//    apply plugin: 'com.android.application'
-//}else {
+if (singleModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
     apply plugin: 'com.android.library'
-//}
-//
-apply from :"../dependencies.gradle"
+}
+
 android {
+    compileSdkVersion compile_SdkVersion
+    buildToolsVersion build_ToolsVersion
 
     defaultConfig {
-//        if (singleModule.toBoolean()){
-//            applicationId "com.example.banner"
-//        }
+        if (singleModule.toBoolean()) {
+            applicationId "com.example.banner"
+        }
         minSdkVersion min_SdkVersion
         targetSdkVersion target_SdkVersion
         versionCode 1
