@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.home.exam.ExamActivity"></activity>
+        <activity android:name=".view.live.LiveActivity"></activity>
+        <activity android:name=".view.home.exam.ExamActivity" />
         <activity
             android:name=".StartPageActivity"
             android:theme="@style/AppTheme.Launcher">
@@ -22,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.NaviActivity"></activity>
+        <activity android:name=".view.NaviActivity" />
         <activity android:name=".MainActivity" />
 
         <meta-data

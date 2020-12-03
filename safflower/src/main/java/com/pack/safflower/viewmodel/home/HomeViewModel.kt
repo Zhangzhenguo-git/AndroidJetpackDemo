@@ -1,4 +1,5 @@
 package com.pack.safflower.viewmodel.home
+
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
@@ -16,12 +17,12 @@ import com.blankj.utilcode.util.SizeUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.base.BaseViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
 import com.pack.safflower.R
 import com.pack.safflower.adapter.GridAdapter
-import com.example.baselib.base.BaseViewModel
 import com.pack.safflower.databinding.TableitemLayoutBinding
 import com.pack.safflower.model.home.GridData
 import com.pack.safflower.model.home.HomeModelImpl
@@ -43,6 +44,7 @@ public class HomeViewModel : BaseViewModel() {
 
     lateinit var tabBinding: TableitemLayoutBinding
     public lateinit var inflater: LayoutInflater
+
     /**
      * 获取tabItems持久性数据
      */
@@ -144,13 +146,19 @@ public class HomeViewModel : BaseViewModel() {
     /**
      * 设置菜单适配器
      */
-    fun setGridItemAndAdapter(gridItem: GridView, items: List<GridData>) {
-        inflater= LayoutInflater.from(mActivity)
-        val adapter: GridAdapter = GridAdapter(mActivity,items,gridItem)
-        gridItem.adapter=adapter
-        adapter.setOnGridItemListener(GridAdapter.OnGridItemLinstener {
-            System.out.println("执行"+it)
-        })
+    fun setGridItemAndAdapter(gridItem: GridView, items: List<GridData>): GridAdapter {
+        inflater = LayoutInflater.from(mActivity)
+        val adapter: GridAdapter = GridAdapter(mActivity, items, gridItem)
+        gridItem.adapter = adapter
+        return adapter
+    }
+
+    private fun startFragment(view: View, it: Int) {
+        if (it == 0) {
+
+        } else if (it == 1) {
+
+        }
     }
 
 
@@ -191,7 +199,7 @@ public class HomeViewModel : BaseViewModel() {
         viewPager!!.unregisterOnPageChangeCallback(changeCallback)
     }
 
-    fun setGridItemClick(view:GridView) {
+    fun setGridItemClick(view: GridView) {
 
     }
 }

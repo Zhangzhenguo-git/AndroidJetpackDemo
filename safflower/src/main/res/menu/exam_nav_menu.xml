@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/examOne"
+        android:icon="@drawable/navbuttom_examone_icon"
+        android:title="首页"></item>
+    <item
+        android:id="@+id/examTwo"
+        android:icon="@drawable/navbuttom_examtwo_icon"
+        android:title="题库集市"></item>
+    <item
+        android:id="@+id/examThree"
+        android:icon="@drawable/navbuttom_examthree_icon"
+        android:title="搜题"></item>
+    <item
+        android:id="@+id/examFour"
+        android:icon="@drawable/navbuttom_examfour_icon"
+        android:title="考试管理"></item>
+    <item
+        android:id="@+id/examFlve"
+        android:icon="@drawable/navbuttom_examflve_icon"
+        android:title="我的"></item>
+</menu>

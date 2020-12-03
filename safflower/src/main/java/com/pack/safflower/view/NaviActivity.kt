@@ -7,8 +7,8 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.example.base.BaseActivity_K
 import com.pack.safflower.R
-import com.example.baselib.base.BaseActivity_K
 import com.pack.safflower.util.bcr.CheckNetWorkBcr
 import com.pack.safflower.databinding.ActivityNaviBinding
 

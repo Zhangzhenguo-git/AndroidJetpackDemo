@@ -3,7 +3,7 @@ package com.pack.safflower
 import android.os.Handler
 import android.os.Message
 import androidx.databinding.DataBindingUtil
-import com.example.baselib.base.BaseActivity_K
+import com.example.base.BaseActivity_K
 import com.pack.safflower.databinding.ActivityStartPageBinding
 import com.pack.safflower.view.NaviActivity
 import me.jessyan.autosize.internal.CancelAdapt
@@ -32,7 +32,7 @@ class StartPageActivity : BaseActivity_K(), CancelAdapt {
 
 
     override fun initClick() {
-        startPageHandler.postDelayed(runnable,3000)
+        startPageHandler.postDelayed(runnable,300)
 //        startPageHandler.sendEmptyMessageDelayed(0,100)
     }
 }

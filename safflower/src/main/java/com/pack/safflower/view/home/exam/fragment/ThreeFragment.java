@@ -1,4 +1,4 @@
-package com.pack.safflower.view.live;
+package com.pack.safflower.view.home.exam.fragment;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -13,26 +13,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pack.safflower.R;
-import com.pack.safflower.viewmodel.live.LiveViewModel;
+import com.pack.safflower.viewmodel.home.exam.ThreeViewModel;
 
-public class LiveFragment extends Fragment {
+public class ThreeFragment extends Fragment {
 
-    private LiveViewModel mViewModel;
+    private ThreeViewModel mViewModel;
 
-    public static LiveFragment newInstance() {
-        return new LiveFragment();
+    public static ThreeFragment newInstance() {
+        return new ThreeFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.live_fragment, container, false);
+        return inflater.inflate(R.layout.three_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(LiveViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(ThreeViewModel.class);
         // TODO: Use the ViewModel
     }
 

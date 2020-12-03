@@ -9,10 +9,10 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.home.exam.ExamActivity">
+        tools:context=".view.live.LiveActivity">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bnvExamNaviBottom"
+            android:id="@+id/bnvLiveNaviBottom"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
@@ -21,14 +21,26 @@
             app:menu="@menu/exam_nav_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
         <fragment
-            android:id="@+id/flExamFrame"
+            android:id="@+id/flLiveFrame"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/bnvExamNaviBottom"
+            android:layout_above="@id/bnvLiveNaviBottom"
             app:defaultNavHost="true"
             app:navGraph="@navigation/examnav_graph"></fragment>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/liveFLoatButtom"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            app:borderWidth="0dp"
+            app:elevation="9dp"
+            android:src="@drawable/navbuttom_examthree_icon"
+            ></com.google.android.material.floatingactionbutton.FloatingActionButton>
     </RelativeLayout>
 
 

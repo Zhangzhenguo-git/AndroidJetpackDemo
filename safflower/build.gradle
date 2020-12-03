@@ -22,5 +22,11 @@ android {
 }
 
 dependencies {
-
+    //    状态布局
+    api project(path: ':statelayout')
+    api project(path: ':banner')
+    //屏幕适配（今日头条碎片化自动适配）
+    api 'me.jessyan:autosize:1.1.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 }

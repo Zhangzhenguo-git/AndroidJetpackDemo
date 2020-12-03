@@ -1,7 +1,7 @@
 package com.pack.safflower
 
 import androidx.databinding.DataBindingUtil
-import com.example.baselib.base.BaseActivity_K
+import com.example.base.BaseActivity_K
 import com.pack.safflower.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity_K() {

@@ -1,5 +1,6 @@
 package com.pack.safflower.view.home
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -14,21 +15,24 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.base.BaseFragment_J
 import com.pack.banner.IndicatorView
 import com.pack.banner.ScaleInTransformer
 import com.pack.safflower.R
-import com.example.baselib.base.BaseFragment_J
+import com.pack.safflower.adapter.GridAdapter
 import com.pack.safflower.databinding.HomeFragmentBinding
 import com.pack.safflower.util.UIUtil
 import com.pack.safflower.util.Utils
+import com.pack.safflower.view.home.exam.ExamActivity
 import com.pack.safflower.view.home.tab.RecommendFragment
 import com.pack.safflower.viewmodel.home.HomeViewModel
 
 
-class HomeFragment: BaseFragment_J() {
+class HomeFragment : BaseFragment_J() {
     private lateinit var mViewModel: HomeViewModel
     private lateinit var binding: HomeFragmentBinding
-    private var pagerS:MutableList<Fragment> = ArrayList()
+    private var pagerS: MutableList<Fragment> = ArrayList()
+
     companion object {
         fun newInstance(): HomeFragment {
             return HomeFragment()
@@ -43,7 +47,7 @@ class HomeFragment: BaseFragment_J() {
 
     override fun initViewModel() {
         mViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        binding.liveData=mViewModel
+        binding.liveData = mViewModel
         mViewModel.setContext(mActivity);
     }
 
@@ -69,9 +73,9 @@ class HomeFragment: BaseFragment_J() {
         pagerS.add(RecommendFragment())
         pagerS.add(RecommendFragment())
         mViewModel.getTabItems().observe(this, Observer {
-            if (it!=null && it.size>0){
-                mViewModel.setTabItem(binding.homeTable,it)
-                mViewModel.setTabPageAdapter(binding.homeTabViewPage,pagerS,it, requireActivity().supportFragmentManager,lifecycle)
+            if (it != null && it.size > 0) {
+                mViewModel.setTabItem(binding.homeTable, it)
+                mViewModel.setTabPageAdapter(binding.homeTabViewPage, pagerS, it, requireActivity().supportFragmentManager, lifecycle)
             }
         })
         binding!!.homeBannerView.setAutoTurningTime(3000)
@@ -93,16 +97,21 @@ class HomeFragment: BaseFragment_J() {
     /**
      * 菜单
      */
-    private fun initGridView(){
+    private fun initGridView() {
         mViewModel.getGridItems().observe(this, Observer {
-            mViewModel.setGridItemAndAdapter(binding.homeGridView,it)
+            mViewModel.setGridItemAndAdapter(binding.homeGridView, it).setOnGridItemListener(GridAdapter.OnGridItemLinstener { view: View, i: Int ->
+                if (i==0){
+                    startActivity(Intent(context,ExamActivity().javaClass));
+                }else if (i==1){
+
+                }
+            })
         })
     }
-
     /**
      * 推荐区域
      */
-    private fun initRecomment(){
+    private fun initRecomment() {
         Glide.with(mActivity).load(R.mipmap.banner_icon1).apply(RequestOptions().transform(RoundedCorners(10))).into(binding.homeRecommendLeft)
         Glide.with(mActivity).load(R.mipmap.banner_icon2).apply(RequestOptions().transform(RoundedCorners(10))).into(binding.homeRecommendRight)
     }

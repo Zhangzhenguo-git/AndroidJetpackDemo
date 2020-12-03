@@ -1,7 +1,6 @@
 package com.example.base
 
 import android.app.Activity
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 
 /**

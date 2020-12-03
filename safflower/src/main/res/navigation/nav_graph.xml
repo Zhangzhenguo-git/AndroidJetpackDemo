@@ -22,14 +22,14 @@
         android:id="@+id/liveFragment"
         android:name="com.pack.safflower.view.live.LiveFragment"
         android:label="live_fragment"
-        tools:layout="@layout/read_fragment">
+        tools:layout="@layout/live_fragment">
 
     </fragment>
     <fragment
         android:id="@+id/whateverFragment"
         android:name="com.pack.safflower.view.whatver.WhateverFragment"
         android:label="whatver_fragment"
-        tools:layout="@layout/live_fragment">
+        tools:layout="@layout/whatever_fragment">
     </fragment>
     <fragment
         android:id="@+id/userFragment"

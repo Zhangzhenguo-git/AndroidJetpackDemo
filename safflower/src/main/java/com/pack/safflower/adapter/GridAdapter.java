@@ -74,7 +74,7 @@ public class GridAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if (onGridItemListener != null) {
-                    onGridItemListener.onItemClick(i);
+                    onGridItemListener.onItemClick(v,i);
                 }
             }
         });
@@ -90,7 +90,7 @@ public class GridAdapter extends BaseAdapter {
      * Item点击事件
      */
     public interface OnGridItemLinstener {
-        void onItemClick(int position);
+        void onItemClick(View view,int position);
     }
 
     public void setOnGridItemListener(OnGridItemLinstener onGridItemListener) {

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/examnav_graph"
+    app:startDestination="@id/examOne">
+    <fragment
+        android:id="@+id/examOne"
+        android:name="com.pack.safflower.view.home.exam.fragment.OneFragment"
+        android:label="one_fragment"
+        tools:layout="@layout/one_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/examTwo"
+        android:name="com.pack.safflower.view.home.exam.fragment.TwoFragment"
+        android:label="two_fragment"
+        tools:layout="@layout/two_fragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/examThree"
+        android:name="com.pack.safflower.view.home.exam.fragment.ThreeFragment"
+        android:label="three_fragment"
+        tools:layout="@layout/three_fragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/examFour"
+        android:name="com.pack.safflower.view.home.exam.fragment.FourFragment"
+        android:label="four_fragment"
+        tools:layout="@layout/four_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/examFlve"
+        android:name="com.pack.safflower.view.home.exam.fragment.FlveFragment"
+        android:label="flve_fragment"
+        tools:layout="@layout/flve_fragment">
+    </fragment>
+</navigation>
