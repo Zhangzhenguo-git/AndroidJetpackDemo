@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/moreOne"
+        android:icon="@drawable/navbuttom_examone_icon"
+        android:title="首页1"></item>
+    <item
+        android:id="@+id/moreTwo"
+        android:icon="@drawable/navbuttom_examone_icon"
+        android:title="首页2"></item>
+    <item
+        android:id="@+id/moreThree"
+        android:icon="@drawable/navbuttom_examone_icon"
+        android:title="首页3"></item>
+    <item
+        android:id="@+id/moreFour"
+        android:icon="@drawable/navbuttom_examone_icon"
+        android:title="首页4"></item>
+</menu>

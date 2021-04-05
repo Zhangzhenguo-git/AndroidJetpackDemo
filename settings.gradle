@@ -1,3 +1,5 @@
+include ':mvvmtwo'
+include ':modularone'
 include ':base'
 include ':safflower'
 include ':paging'

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/morenav_graph"
+    app:startDestination="@id/moreOne">
+    <fragment
+        android:id="@+id/moreOne"
+        android:name="com.example.modularone.MoreOneFragment"
+        android:label="more_one"
+        tools:layout="@layout/more_one_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/moreTwo"
+        android:name="com.example.modularone.MoreOneFragment"
+        android:label="more_two"
+        tools:layout="@layout/more_one_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/moreThree"
+        android:name="com.example.modularone.MoreOneFragment"
+        android:label="more_three"
+        tools:layout="@layout/more_one_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/moreFour"
+        android:name="com.example.modularone.MoreOneFragment"
+        android:label="more_fove"
+        tools:layout="@layout/more_one_fragment">
+    </fragment>
+</navigation>

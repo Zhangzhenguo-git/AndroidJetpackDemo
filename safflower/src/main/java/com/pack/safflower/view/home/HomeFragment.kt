@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager2.widget.ViewPager2
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
@@ -24,10 +25,12 @@ import com.pack.safflower.databinding.HomeFragmentBinding
 import com.pack.safflower.util.UIUtil
 import com.pack.safflower.util.Utils
 import com.pack.safflower.view.home.exam.ExamActivity
+import com.pack.safflower.view.home.more.MoreActivity
 import com.pack.safflower.view.home.tab.RecommendFragment
 import com.pack.safflower.viewmodel.home.HomeViewModel
 
 
+@Route(path = "modularone/MoreOneFragment")
 class HomeFragment : BaseFragment_J() {
     private lateinit var mViewModel: HomeViewModel
     private lateinit var binding: HomeFragmentBinding
@@ -102,8 +105,8 @@ class HomeFragment : BaseFragment_J() {
             mViewModel.setGridItemAndAdapter(binding.homeGridView, it).setOnGridItemListener(GridAdapter.OnGridItemLinstener { view: View, i: Int ->
                 if (i==0){
                     startActivity(Intent(context,ExamActivity().javaClass));
-                }else if (i==1){
-
+                }else if (i==9){
+                    startActivity(Intent(context,MoreActivity().javaClass));
                 }
             })
         })

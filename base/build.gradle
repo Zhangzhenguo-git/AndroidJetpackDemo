@@ -15,7 +15,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+
+            }
+        }
     }
+
 
     buildTypes {
         release {
@@ -75,5 +83,8 @@ dependencies {
 
 
     api "com.squareup.okhttp3:okhttp:4.9.0"
+
+    api 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 
 }
